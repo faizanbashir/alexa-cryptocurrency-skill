@@ -1,0 +1,33 @@
+{
+  "name": "cryptoprice",
+  "version": "1.0.0",
+  "description": "Serverless Framework Alexa Skill to get the latest price of Crypto Currencies ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alexa",
+    "skill",
+    "serverless",
+    "framework",
+    "crypto",
+    "currency",
+    "bitcoin",
+    "ethereum",
+    "litecoin",
+    "ripple"
+  ],
+  "author": "Faizan Bashir",
+  "license": "MIT",
+  "dependencies": {
+    "alexa-sdk": "^1.0.25",
+    "npm": "^6.2.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "serverless-alexa-skills": "0.0.6",
+    "serverless-offline": "^3.25.6"
+  }
+}
