@@ -1,0 +1,502 @@
+{
+	"populous": {
+		"id": "1789",
+		"name": "Populous",
+		"symbol": "PPT"
+	},
+	"monacoin": {
+		"id": "213",
+		"name": "MonaCoin",
+		"symbol": "MONA"
+	},
+	"bitcoin diamond": {
+		"id": "2222",
+		"name": "Bitcoin Diamond",
+		"symbol": "BCD"
+	},
+	"gas": {
+		"id": "1785",
+		"name": "Gas",
+		"symbol": "GAS"
+	},
+	"dash": {
+		"id": "131",
+		"name": "Dash",
+		"symbol": "DASH"
+	},
+	"nuls": {
+		"id": "2092",
+		"name": "Nuls",
+		"symbol": "NULS"
+	},
+	"icon": {
+		"id": "2099",
+		"name": "ICON",
+		"symbol": "ICX"
+	},
+	"verge": {
+		"id": "693",
+		"name": "Verge",
+		"symbol": "XVG"
+	},
+	"monaco": {
+		"id": "1776",
+		"name": "MCO",
+		"symbol": "MCO"
+	},
+	"binance coin": {
+		"id": "1839",
+		"name": "Binance Coin",
+		"symbol": "BNB"
+	},
+	"iostoken": {
+		"id": "2405",
+		"name": "IOST",
+		"symbol": "IOST"
+	},
+	"moac": {
+		"id": "2403",
+		"name": "MOAC",
+		"symbol": "MOAC"
+	},
+	"neo": {
+		"id": "1376",
+		"name": "NEO",
+		"symbol": "NEO"
+	},
+	"cybermiles": {
+		"id": "2246",
+		"name": "CyberMiles",
+		"symbol": "CMT"
+	},
+	"tezos": {
+		"id": "2011",
+		"name": "Tezos",
+		"symbol": "XTZ"
+	},
+	"cardano": {
+		"id": "2010",
+		"name": "Cardano",
+		"symbol": "ADA"
+	},
+	"zilliqa": {
+		"id": "2469",
+		"name": "Zilliqa",
+		"symbol": "ZIL"
+	},
+	"tron": {
+		"id": "1958",
+		"name": "TRON",
+		"symbol": "TRX"
+	},
+	"aeternity": {
+		"id": "1700",
+		"name": "Aeternity",
+		"symbol": "AE"
+	},
+	"nano": {
+		"id": "1567",
+		"name": "Nano",
+		"symbol": "NANO"
+	},
+	"elastos": {
+		"id": "2492",
+		"name": "Elastos",
+		"symbol": "ELA"
+	},
+	"ripple": {
+		"id": "52",
+		"name": "XRP",
+		"symbol": "XRP"
+	},
+	"theta token": {
+		"id": "2416",
+		"name": "Theta Token",
+		"symbol": "THETA"
+	},
+	"tether": {
+		"id": "825",
+		"name": "Tether",
+		"symbol": "USDT"
+	},
+	"aion": {
+		"id": "2062",
+		"name": "Aion",
+		"symbol": "AION"
+	},
+	"bytecoin bcn": {
+		"id": "372",
+		"name": "Bytecoin",
+		"symbol": "BCN"
+	},
+	"maidsafecoin": {
+		"id": "291",
+		"name": "MaidSafeCoin",
+		"symbol": "MAID"
+	},
+	"factom": {
+		"id": "1087",
+		"name": "Factom",
+		"symbol": "FCT"
+	},
+	"ardor": {
+		"id": "1320",
+		"name": "Ardor",
+		"symbol": "ARDR"
+	},
+	"ethereum classic": {
+		"id": "1321",
+		"name": "Ethereum Classic",
+		"symbol": "ETC"
+	},
+	"waltonchain": {
+		"id": "1925",
+		"name": "Waltonchain",
+		"symbol": "WTC"
+	},
+	"polymath network": {
+		"id": "2496",
+		"name": "Polymath",
+		"symbol": "POLY"
+	},
+	"reddcoin": {
+		"id": "118",
+		"name": "ReddCoin",
+		"symbol": "RDD"
+	},
+	"veritaseum": {
+		"id": "1710",
+		"name": "Veritaseum",
+		"symbol": "VERI"
+	},
+	"wax": {
+		"id": "2300",
+		"name": "WAX",
+		"symbol": "WAX"
+	},
+	"komodo": {
+		"id": "1521",
+		"name": "Komodo",
+		"symbol": "KMD"
+	},
+	"maker": {
+		"id": "1518",
+		"name": "Maker",
+		"symbol": "MKR"
+	},
+	"gifto": {
+		"id": "2289",
+		"name": "Gifto",
+		"symbol": "GTO"
+	},
+	"wanchain": {
+		"id": "2606",
+		"name": "Wanchain",
+		"symbol": "WAN"
+	},
+	"steem": {
+		"id": "1230",
+		"name": "Steem",
+		"symbol": "STEEM"
+	},
+	"pundi x": {
+		"id": "2603",
+		"name": "Pundi X",
+		"symbol": "NPXS"
+	},
+	"mithril": {
+		"id": "2608",
+		"name": "Mithril",
+		"symbol": "MITH"
+	},
+	"bitcoin cash": {
+		"id": "1831",
+		"name": "Bitcoin Cash",
+		"symbol": "BCH"
+	},
+	"loopring": {
+		"id": "1934",
+		"name": "Loopring",
+		"symbol": "LRC"
+	},
+	"zcash": {
+		"id": "1437",
+		"name": "Zcash",
+		"symbol": "ZEC"
+	},
+	"enigma project": {
+		"id": "2044",
+		"name": "Enigma",
+		"symbol": "ENG"
+	},
+	"bancor": {
+		"id": "1727",
+		"name": "Bancor",
+		"symbol": "BNT"
+	},
+	"bitcoin private": {
+		"id": "2575",
+		"name": "Bitcoin Private",
+		"symbol": "BTCP"
+	},
+	"iota": {
+		"id": "1720",
+		"name": "IOTA",
+		"symbol": "MIOTA"
+	},
+	"digibyte": {
+		"id": "109",
+		"name": "DigiByte",
+		"symbol": "DGB"
+	},
+	"stellar": {
+		"id": "512",
+		"name": "Stellar",
+		"symbol": "XLM"
+	},
+	"ethereum": {
+		"id": "1027",
+		"name": "Ethereum",
+		"symbol": "ETH"
+	},
+	"aelf": {
+		"id": "2299",
+		"name": "aelf",
+		"symbol": "ELF"
+	},
+	"dropil": {
+		"id": "2591",
+		"name": "Dropil",
+		"symbol": "DROP"
+	},
+	"stratis": {
+		"id": "1343",
+		"name": "Stratis",
+		"symbol": "STRAT"
+	},
+	"digixdao": {
+		"id": "1229",
+		"name": "DigixDAO",
+		"symbol": "DGD"
+	},
+	"dentacoin": {
+		"id": "1876",
+		"name": "Dentacoin",
+		"symbol": "DCN"
+	},
+	"paypex": {
+		"id": "2191",
+		"name": "Paypex",
+		"symbol": "PAYX"
+	},
+	"nebulas token": {
+		"id": "1908",
+		"name": "Nebulas",
+		"symbol": "NAS"
+	},
+	"vechain": {
+		"id": "1904",
+		"name": "VeChain",
+		"symbol": "VEN"
+	},
+	"hshare": {
+		"id": "1903",
+		"name": "Hshare",
+		"symbol": "HSR"
+	},
+	"kyber network": {
+		"id": "1982",
+		"name": "Kyber Network",
+		"symbol": "KNC"
+	},
+	"ark": {
+		"id": "1586",
+		"name": "Ark",
+		"symbol": "ARK"
+	},
+	"ontology": {
+		"id": "2566",
+		"name": "Ontology",
+		"symbol": "ONT"
+	},
+	"litecoin": {
+		"id": "2",
+		"name": "Litecoin",
+		"symbol": "LTC"
+	},
+	"lisk": {
+		"id": "1214",
+		"name": "Lisk",
+		"symbol": "LSK"
+	},
+	"bitshares": {
+		"id": "463",
+		"name": "BitShares",
+		"symbol": "BTS"
+	},
+	"loom network": {
+		"id": "2588",
+		"name": "Loom Network",
+		"symbol": "LOOM"
+	},
+	"bytom": {
+		"id": "1866",
+		"name": "Bytom",
+		"symbol": "BTM"
+	},
+	"qash": {
+		"id": "2213",
+		"name": "QASH",
+		"symbol": "QASH"
+	},
+	"kin": {
+		"id": "1993",
+		"name": "Kin",
+		"symbol": "KIN"
+	},
+	"golem network tokens": {
+		"id": "1455",
+		"name": "Golem",
+		"symbol": "GNT"
+	},
+	"augur": {
+		"id": "1104",
+		"name": "Augur",
+		"symbol": "REP"
+	},
+	"cryptonex": {
+		"id": "2027",
+		"name": "Cryptonex",
+		"symbol": "CNX"
+	},
+	"rchain": {
+		"id": "2021",
+		"name": "RChain",
+		"symbol": "RHOC"
+	},
+	"emercoin": {
+		"id": "558",
+		"name": "Emercoin",
+		"symbol": "EMC"
+	},
+	"decred": {
+		"id": "1168",
+		"name": "Decred",
+		"symbol": "DCR"
+	},
+	"pivx": {
+		"id": "1169",
+		"name": "PIVX",
+		"symbol": "PIVX"
+	},
+	"0x": {
+		"id": "1896",
+		"name": "0x",
+		"symbol": "ZRX"
+	},
+	"ethos": {
+		"id": "1817",
+		"name": "Ethos",
+		"symbol": "ETHOS"
+	},
+	"power ledger": {
+		"id": "2132",
+		"name": "Power Ledger",
+		"symbol": "POWR"
+	},
+	"decentraland": {
+		"id": "1966",
+		"name": "Decentraland",
+		"symbol": "MANA"
+	},
+	"mixin": {
+		"id": "2349",
+		"name": "Mixin",
+		"symbol": "XIN"
+	},
+	"nem": {
+		"id": "873",
+		"name": "NEM",
+		"symbol": "XEM"
+	},
+	"bitcoin": {
+		"id": "1",
+		"name": "Bitcoin",
+		"symbol": "BTC"
+	},
+	"basic attention token": {
+		"id": "1697",
+		"name": "Basic Attention Token",
+		"symbol": "BAT"
+	},
+	"status": {
+		"id": "1759",
+		"name": "Status",
+		"symbol": "SNT"
+	},
+	"tenx": {
+		"id": "1758",
+		"name": "TenX",
+		"symbol": "PAY"
+	},
+	"funfair": {
+		"id": "1757",
+		"name": "FunFair",
+		"symbol": "FUN"
+	},
+	"monero": {
+		"id": "328",
+		"name": "Monero",
+		"symbol": "XMR"
+	},
+	"huobi token": {
+		"id": "2502",
+		"name": "Huobi Token",
+		"symbol": "HT"
+	},
+	"gxchain": {
+		"id": "1750",
+		"name": "GXChain",
+		"symbol": "GXS"
+	},
+	"waves": {
+		"id": "1274",
+		"name": "Waves",
+		"symbol": "WAVES"
+	},
+	"dogecoin": {
+		"id": "74",
+		"name": "Dogecoin",
+		"symbol": "DOGE"
+	},
+	"siacoin": {
+		"id": "1042",
+		"name": "Siacoin",
+		"symbol": "SC"
+	},
+	"bitcoin gold": {
+		"id": "2083",
+		"name": "Bitcoin Gold",
+		"symbol": "BTG"
+	},
+	"kucoin shares": {
+		"id": "2087",
+		"name": "KuCoin Shares",
+		"symbol": "KCS"
+	},
+	"omisego": {
+		"id": "1808",
+		"name": "OmiseGO",
+		"symbol": "OMG"
+	},
+	"qtum": {
+		"id": "1684",
+		"name": "Qtum",
+		"symbol": "QTUM"
+	},
+	"eos": {
+		"id": "1765",
+		"name": "EOS",
+		"symbol": "EOS"
+	}
+}
