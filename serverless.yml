@@ -1,0 +1,120 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: ${self:custom.skillNamespace}Skill
+
+frameworkVersion: ">=1.4.0 <2.0.0"
+
+# package:
+#   exclude:
+#     - node_modules/**
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: ${self:custom.secrets.REGION}
+  profile: ${self:custom.secrets.PROFILE}
+  stage: ${opt:stage, self:custom.defaultStage}
+  memory: 128
+  timeout: 10
+
+plugins:
+  - serverless-alexa-skills
+  - serverless-offline
+
+custom:
+  secrets: ${file(secrets.json)}
+  serverless-offline:
+    port: 4000
+  skillNamespace: cryptoPrice
+  defaultStage: dev
+  profiles:
+    dev: ${self:custom.skillNamespace}-profile-dev
+    prod: ${self:custom.skillNamespace}-profile-prod
+  alexa:
+    vendorId: ${self:custom.secrets.VENDOR_ID}
+    clientId: ${self:custom.secrets.CLIENT_ID}
+    clientSecret: ${self:custom.secrets.CLIENT_SECRET}
+    skills:
+      - id:
+        manifest:
+          publishingInformation:
+            locales:
+              en-US:
+                name: cryptoPrice
+          apis:
+            custom: {}
+          manifestVersion: '1.0'
+        models:
+          en-US:
+            interactionModel:
+              languageModel:
+                invocationName: 
+                intents:
+                  - name: AMAZON.FallbackIntent
+                    samples: []
+                  - name: AMAZON.CancelIntent
+                    samples: []
+                  - name: AMAZON.HelpIntent
+                    samples: []
+                  - name: AMAZON.StopIntent
+                    samples: []
+                  - name: GetCryptoPriceIntent
+                    slots:
+                    - name: cryptocurrency
+                      type: AMAZON.SearchQuery
+                    samples:
+                      - 'what is the price of {cryptocurrency}'
+                      - 'whats the price of {cryptocurrency}'
+                      - 'get me the latest price of {cryptocurrency}'
+                      - 'get me the price of {cryptocurrency}'
+                      - '{cryptocurrency} price'
+                      - 'tell me the latest price of {cryptocurrency}'
+                      - 'tell me the price of {cryptocurrency}'
+
+functions:
+  skill:
+    handler: app.handler
+    role:
+      'Fn::GetAtt': [ lambdaRole, Arn ]
+    events:
+      - alexaSkill:
+          appId: ${self:custom.secrets.APP_ID}
+          enabled: true
+
+resources:
+  Resources:
+    lambdaRole:
+      Type: AWS::IAM::Role
+      Properties:
+        RoleName: ${self:service}-${self:provider.stage}-${self:provider.region}-lambdaRole
+        Path: "/"
+        AssumeRolePolicyDocument:
+          Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                  - lambda.amazonaws.com
+              Action: sts:AssumeRole
+        Policies:
+          - PolicyName: ${self:service}-${self:provider.stage}-lambdaPolicy
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: 'Allow'
+                  Action:
+                    - 'logs:CreateLogGroup'
+                    - 'logs:CreateLogStream'
+                    - 'logs:PutLogEvents'
+                  Resource: arn:aws:logs:${self:provider.region}:*:*
