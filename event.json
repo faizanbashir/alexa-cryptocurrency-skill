@@ -27,10 +27,20 @@
 		}
 	},
 	"request": {
-		"type": "LaunchRequest",
-		"requestId": "amzn1.echo-api.request.2f94fc2e-3576-47ee-bb2c-b048c30e4ae4",
-		"timestamp": "2018-07-15T18:51:03Z",
+		"type": "IntentRequest",
+		"requestId": "amzn1.echo-api.request.87e8b0a9-a1f3-40ca-8e0c-b01521a9a119",
+		"timestamp": "2018-07-17T17:39:52Z",
 		"locale": "en-US",
-		"shouldLinkResultBeReturned": false
+		"intent": {
+			"name": "GetCryptoPriceIntent",
+			"confirmationStatus": "NONE",
+			"slots": {
+				"cryptocurrency": {
+					"name": "cryptocurrency",
+					"value": "bitcoin",
+					"confirmationStatus": "NONE"
+				}
+			}
+		}
 	}
 }
