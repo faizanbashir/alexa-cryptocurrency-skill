@@ -22,7 +22,7 @@ const appIntent = {
             this.emit(':responseReady');
         }
 
-        rp(config.URL)
+        rp(config.COINMARKET_V2_API)
             .then(body => {
                 console.log(body);
                 
