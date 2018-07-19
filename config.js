@@ -12,5 +12,6 @@ const config = {
     OBSCURE: "Sorry I didnt understand that. Say help if you need any assistance.",
     CURRENCY_NOT_FOUND: "Sorry we were not able to find {cryptocurrency}. Can you please say that again?",
     CURRENCY_PRICE: "The current price of {cryptocurrency} is ${price}",
-}
+};
+
 module.exports = config;

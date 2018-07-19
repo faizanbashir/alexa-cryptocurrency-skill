@@ -26,9 +26,7 @@ const appIntent = {
         try {
             cryptoData = JSON.parse(fs.readFileSync('cryptocurrency.json'));
             currency = cryptoData[cryptocurrency];
-            if (typeof(currency) === 'undefined') {
-                throw TypeError;
-            }
+            if (typeof(currency) === 'undefined') throw TypeError;
             console.log('cryptoprice: Currency, ' + currency);
         } catch (e) {
             response = config.CURRENCY_NOT_FOUND.replace('{cryptocurrency}', cryptocurrency);
