@@ -32,7 +32,7 @@ const appIntent = {
             this.response.speak(RESPONSE_TEXT);
             this.response.listen(config.HELP_REPROMPT);
             this.emit(':responseReady');
-            console.log('Could not find currency: ' + cryptocurrency);
+            console.log('cryptoprice: Could not find currency: ' + cryptocurrency);
         }
 
         RESPONSE_TEXT = "You have asked for the prices of " + cryptocurrency;
@@ -51,7 +51,7 @@ const appIntent = {
                 }
 
                 let price = result.data.quotes.USD.price;
-                console.log(result.data.quotes.USD.price);
+                console.log('cryptoprice: ' + result.data.quotes.USD.price);
 
                 RESPONSE_TEXT = "The current price of "+ cryptocurrency + " is $"+ price;
 

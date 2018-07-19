@@ -4,19 +4,20 @@ const Alexa = require('alexa-sdk');
 const config = require('./config.js');
 
 module.exports.handler = (event, context, callback) => {
-  console.log("Alexa.main handler");
+  console.log("cryptoprice: Entrypoint");
   console.log(event);
+
   var alexa = Alexa.handler(event, context);
   alexa.appId = config.APP_ID;
 
-  console.log("Alexa.main: registerHandlers");
+  console.log("cryptoprice: registertering intents");
 
   alexa.registerHandlers(
     require('./intents/defaultIntent'),
     require('./intents/appIntent')
   );
   
-  console.log("Alexa.main: registerHandlers completed");
+  console.log("cryptoprice: intent registration completed");
   alexa.execute();
-  console.log("Alexa.main: registerHandlers executed");
+  console.log("cryptoprice: intents executed");
 };
