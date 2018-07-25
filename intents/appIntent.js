@@ -12,7 +12,7 @@ const appIntent = {
     },
 
     'GetCryptoPriceIntent': function(){
-        const cryptocurrency = this.event.request.intent.slots.cryptocurrency.value;
+        const cryptocurrency = this.event.request.intent.slots.cryptocurrency.value.trim();
         let response = '';
         let cryptoData = [];
         let currency = '';
@@ -21,6 +21,7 @@ const appIntent = {
             this.response.speak(config.ENTER_CRYPTOCURRENCY);
             this.response.listen(config.HELP_REPROMPT);
             this.emit(':responseReady');
+            console.log('cryptoprice: No value provided for cryptocurrency');
         }
 
         try {
@@ -66,7 +67,7 @@ const appIntent = {
             });
     },
 
-    'Unhandled': function () {;
+    'Unhandled': function () {
 		this.response.speak(config.OBSCURE);
         this.response.listen(config.HELP_REPROMPT);
 		this.emit(':responseReady');
