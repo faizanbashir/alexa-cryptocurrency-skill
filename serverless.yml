@@ -75,12 +75,15 @@ custom:
                       type: AMAZON.SearchQuery
                     samples:
                       - 'what is the price of {cryptocurrency}'
+                      - 'what is the price for {cryptocurrency}'
                       - 'whats the price of {cryptocurrency}'
+                      - 'whats the price for {cryptocurrency}'
                       - 'get me the latest price of {cryptocurrency}'
                       - 'get me the price of {cryptocurrency}'
                       - '{cryptocurrency} price'
                       - 'tell me the latest price of {cryptocurrency}'
                       - 'tell me the price of {cryptocurrency}'
+                      - 'current price of {cryptocurrency}'
 
 functions:
   skill:
