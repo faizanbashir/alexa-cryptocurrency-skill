@@ -5,49 +5,53 @@ const fs = require('fs');
 
 const appIntent = {
     'LaunchRequest': function () {
+        console.info('cryptoprice: Launch intent');
         this.response.cardRenderer(config.HELP_MESSAGE);
-        this.response.speak(config.HELP_MESSAGE);
-        this.response.listen(config.HELP_REPROMPT);
+        this.response.speak(config.HELP_MESSAGE).listen(config.HELP_REPROMPT);
         this.emit(':responseReady');
     },
-
+    'Unhandled': function () {
+        console.info('cryptoprice: Unhandeled intent');
+		this.response.speak(config.OBSCURE).listen(config.HELP_REPROMPT);
+		this.emit(':responseReady');
+    },
     'GetCryptoPriceIntent': function(){
-        const cryptocurrency = this.event.request.intent.slots.cryptocurrency.value.trim();
+        console.info('cryptoprice: GetCryptoPriceIntent intent');
+        if (!isCurrencySlotValid(this.event.request.intent)) {
+            console.error('cryptoprice: No value provided for cryptocurrency');
+            this.response.speak(config.ENTER_CRYPTOCURRENCY + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
+            this.emit(':responseReady');
+        }
+
+        let cryptocurrency = this.event.request.intent.slots.cryptocurrency.value;
         let response = '';
         let cryptoData = [];
         let currency = '';
-        
-        if (!cryptocurrency) {
-            this.response.speak(config.ENTER_CRYPTOCURRENCY);
-            this.response.listen(config.HELP_REPROMPT);
-            this.emit(':responseReady');
-            console.log('cryptoprice: No value provided for cryptocurrency');
-        }
+
+        console.info('cryptoprice: Input slot value => "' + cryptocurrency + '"');
 
         try {
             cryptoData = JSON.parse(fs.readFileSync('cryptocurrency.json'));
             currency = cryptoData[cryptocurrency];
             if (typeof(currency) === 'undefined') throw TypeError;
-            console.log('cryptoprice: Currency, ' + currency);
+            console.log('cryptoprice: Currency info, ' + JSON.stringify(currency));
         } catch (e) {
+            console.error('cryptoprice: Could not find currency: ' + cryptocurrency);
             response = config.CURRENCY_NOT_FOUND.replace('{cryptocurrency}', cryptocurrency);
-            this.response.speak(response);
-            this.response.listen(config.HELP_REPROMPT);
+            this.response.speak(response + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
             this.emit(':responseReady');
-            console.log('cryptoprice: Could not find currency: ' + cryptocurrency);
         }
 
         response = config.CURRENCY_NOT_FOUND.replace('{cryptocurrency}', cryptocurrency);
 
         rp(config.COINMARKET_V2_API + currency.id)
             .then(body => {
-                console.log(body);
                 
                 const result = JSON.parse(body);
 
                 if (result.metadata.error) {
-                    this.response.speak(config.ERROR_MSG);
-                    this.response.listen(config.HELP_REPROMPT);
+                    console.error('cryptoprice: response error, ' + JSON.stringify(result));
+                    this.response.speak(config.ERROR_MSG + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
                     this.emit(':responseReady');
                 }
 
@@ -61,17 +65,17 @@ const appIntent = {
             })
             .catch(err => {
                 console.error("cryptoprice: Error, " + err);
-                this.response.cardRenderer(config.ERROR_MSG);
-                this.response.speak(config.ERROR_MSG);
+                this.response.cardRenderer(config.ERROR_MSG + config.HELP_REPROMPT);
+                this.response.speak(config.HELP_REPROMPT);
                 this.emit(':responseReady');
             });
-    },
-
-    'Unhandled': function () {
-		this.response.speak(config.OBSCURE);
-        this.response.listen(config.HELP_REPROMPT);
-		this.emit(':responseReady');
     }
 };
+
+function isCurrencySlotValid(intent) {
+    var currencySlotFilled = intent && intent.slots &&
+        intent.slots.cryptocurrency && intent.slots.cryptocurrency.value.trim();
+    return currencySlotFilled && isNaN(parseInt(currencySlotFilled));
+}
 
 module.exports = appIntent;

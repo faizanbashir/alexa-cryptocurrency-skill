@@ -4,8 +4,8 @@ const Alexa = require('alexa-sdk');
 const config = require('./config.js');
 
 module.exports.handler = (event, context, callback) => {
-    console.log("cryptoprice: Entrypoint");
-    console.log(event);
+    console.log("cryptoprice: entrypoint");
+    console.log(JSON.stringify(event));
 
     var alexa = Alexa.handler(event, context);
     alexa.appId = config.APP_ID;
