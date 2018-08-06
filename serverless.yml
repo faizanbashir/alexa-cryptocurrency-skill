@@ -84,6 +84,18 @@ custom:
                       - 'tell me the latest price of {cryptocurrency}'
                       - 'tell me the price of {cryptocurrency}'
                       - 'current price of {cryptocurrency}'
+                  - name: EmptyCryptoPriceIntent
+                    samples:
+                      - 'what is the price of'
+                      - 'what is the price for'
+                      - 'whats the price of'
+                      - 'whats the price for'
+                      - 'get me the latest price of'
+                      - 'get me the price of'
+                      - 'price'
+                      - 'tell me the latest price of'
+                      - 'tell me the price of'
+                      - 'current price of'
 
 functions:
   skill:
