@@ -25,7 +25,7 @@
     "npm": "^6.2.0",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
-    "serverless": "^1.28.0"
+    "serverless": "^1.29.0"
   },
   "devDependencies": {
     "serverless-alexa-skills": "0.0.6",
