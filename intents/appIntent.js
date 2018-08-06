@@ -19,7 +19,8 @@ const appIntent = {
         console.info('cryptoprice: GetCryptoPriceIntent intent');
         if (!isCurrencySlotValid(this.event.request.intent)) {
             console.error('cryptoprice: No value provided for cryptocurrency');
-            this.response.speak(config.ENTER_CRYPTOCURRENCY + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
+            this.response.cardRenderer(config.ENTER_CRYPTOCURRENCY + ' ' + config.HELP_REPROMPT);
+            this.response.speak(config.ENTER_CRYPTOCURRENCY + ' ' + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
             this.emit(':responseReady');
         }
 
@@ -38,7 +39,7 @@ const appIntent = {
         } catch (e) {
             console.error('cryptoprice: Could not find currency: ' + cryptocurrency);
             response = config.CURRENCY_NOT_FOUND.replace('{cryptocurrency}', cryptocurrency);
-            this.response.speak(response + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
+            this.response.speak(response + ' ' + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
             this.emit(':responseReady');
         }
 
@@ -51,7 +52,7 @@ const appIntent = {
 
                 if (result.metadata.error) {
                     console.error('cryptoprice: response error, ' + JSON.stringify(result));
-                    this.response.speak(config.ERROR_MSG + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
+                    this.response.speak(config.ERROR_MSG + ' ' + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
                     this.emit(':responseReady');
                 }
 
@@ -65,10 +66,16 @@ const appIntent = {
             })
             .catch(err => {
                 console.error("cryptoprice: Error, " + err);
-                this.response.cardRenderer(config.ERROR_MSG + config.HELP_REPROMPT);
+                this.response.cardRenderer(config.ERROR_MSG + ' ' + config.HELP_REPROMPT);
                 this.response.speak(config.HELP_REPROMPT);
                 this.emit(':responseReady');
             });
+    },
+    'EmptyCryptoPriceIntent': function () {
+        console.error('cryptoprice: No value provided for cryptocurrency');
+        this.response.cardRenderer(config.ENTER_CRYPTOCURRENCY + ' ' + config.HELP_REPROMPT);
+        this.response.speak(config.ENTER_CRYPTOCURRENCY + ' ' + config.HELP_REPROMPT).listen(config.HELP_REPROMPT);
+        this.emit(':responseReady');
     }
 };
 
