@@ -22,7 +22,7 @@
   "license": "MIT",
   "dependencies": {
     "alexa-sdk": "^1.0.25",
-    "npm": "^6.2.0",
+    "npm": "^6.14.6",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "serverless": "^1.29.0"
